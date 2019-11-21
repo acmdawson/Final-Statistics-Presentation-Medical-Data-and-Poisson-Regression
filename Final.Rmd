@@ -1,0 +1,22 @@
+---
+title: "Final"
+author: "AD, SO-H, AB"
+date: "11/21/2019"
+output: pdf_document
+---
+
+
+```{r, message = FALSE, warning = FALSE}
+library(ggplot2)
+library(dplyr)
+library(tibble)
+library(here)
+library(Stat2Data)
+library(knitr)
+library(leaps)
+library(GGally)
+
+Doctor <- read.csv(here("", "DoctorContacts.csv"))
+Doctor <- as_tibble(Doctor)
+Doctor
+```
