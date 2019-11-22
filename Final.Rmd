@@ -32,4 +32,6 @@ p <- ggplot(data = Doc_sample)
 
 p + geom_histogram(mapping = aes(x = mdu), bins = 50 )
 
+model <- glm(mdu~health+physlim+ndisease+linc+educdec+age+sex, Doc_sample, family=poisson)
+summary(model)
 ```
