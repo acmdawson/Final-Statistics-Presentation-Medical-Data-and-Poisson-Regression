@@ -20,3 +20,11 @@ Doctor <- read.csv(here("", "DoctorContacts.csv"))
 Doctor <- as_tibble(Doctor)
 Doctor
 ```
+
+\vspace{0.5cm}
+```{r}
+p <- ggplot(data = Doctor)
+
+p + geom_histogram(mapping = aes(x = mdu, ))
+
+```
