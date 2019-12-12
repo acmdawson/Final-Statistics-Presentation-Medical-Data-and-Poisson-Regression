@@ -11,19 +11,16 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
-## Introduction
 
-
-####  Main Project Questions
+##  Introduction: Main Project Questions
 
 - What is the Poisson Regression and what are it's applications?
 
 - Using the Poisson Regression, can we find significant relationships within our data set.
 
 
-## Introduction Continued
+## Introduction: Our Data Set
 
-### Our Data Set
 
 
 
@@ -42,13 +39,15 @@ knitr::opts_chunk$set(echo = FALSE)
     - Data Set also contains 14 other variables of interest
       
 
-## Our Research Question
+## Introduction: Our Research Question
 
 - How is the number of doctor visits impacted by various factors in an individual's life?
 
-  - Specifically, we want see how one's age, sex, income, physical limitations, and present diseases influence their ability to see out medical care.  
+  - Specifically, we want see how one's age, sex, income, physical limitations, and present diseases influence their ability to seek out medical care.  
   
 - Use the Poisson Regression to model the data and see what relationships, if any, exist in between our variables.  
+
+
 
 
 ## R Markdown
