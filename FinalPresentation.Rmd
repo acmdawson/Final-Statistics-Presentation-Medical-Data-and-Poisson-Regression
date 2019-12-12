@@ -102,7 +102,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Discussion and Critiques: Inference
 
-- With our data being so significant (perhaps abnormally), we were unsure of our ability to use the coefficients with any confidence
+- With our data being so significant (perhaps abnormally), we were unsure of our ability to use the fitted equation with any confidence
 
 - With a high number of possible predictors, we could have ommitted some very significant variables from the regression, which could be vital in understanding what impacts utilization of healthcare.
 
