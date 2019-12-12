@@ -13,7 +13,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Introduction
 
-### Applying the Poisson Regression
 
 ####  Main Project Questions
 
@@ -24,14 +23,32 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Introduction Continued
 
-### Our Data Set and Research Question
+### Our Data Set
+
+
 
  - "Contact with Medical Doctors"
- -- Cross-Sectional data collected in North Carolina between 1977-78
- -- Examines 20186 observations of individuals
- --- Randomly selected subset of 2000 observations for ease of computation
+ 
+    - Cross-Sectional data collected in North Carolina between 1977-78
+ 
+    - Examines 20186 observations of individuals
+ 
+      - Randomly selected subset of 2000 observations for ease of computation
+    
+    - Collected from RAND Health Insurance Experiment (RHIE), which is the longest and largest socially controlled experiment regarding medical care (Price, D. 2002)
+    
+    - Our Response Variable of interest is mdu, which captures the number of times an individual visited a medical health profession during the study
+    
+    - Data Set also contains 14 other variables of interest
+      
 
+## Our Research Question
 
+- How is the number of doctor visits impacted by various factors in an individual's life?
+
+  - Specifically, we want see how one's age, sex, income, physical limitations, and present diseases influence their ability to see out medical care.  
+  
+- Use the Poisson Regression to model the data and see what relationships, if any, exist in between our variables.  
 
 
 ## R Markdown
