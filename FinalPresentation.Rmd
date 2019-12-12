@@ -115,7 +115,15 @@ knitr::opts_chunk$set(echo = FALSE)
   - US healthcare system unique, so inferences at most apply only to US.
   
  
- 
+## Conclusion
+
+- Poisson Regression is useful for analyzing count data, but it is crucial to check the data set and see that conditions are met prior to analysis and inference
+
+- Having a large sample size is helpful, but also must be aware of how that potentially impacts analysis.
+
+- Working on real world data is tough and messy. Takes a lot more time and careful thought
+  - No exact, clear path for analysis
+  -  "One step forward, two steps back"
 
 ## R Markdown
 
