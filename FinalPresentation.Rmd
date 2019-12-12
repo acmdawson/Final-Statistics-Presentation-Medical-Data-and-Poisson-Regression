@@ -66,7 +66,11 @@ knitr::opts_chunk$set(echo = FALSE)
   - An event A occuring does not impact event B from occuring
   
 - Probabilities are porportional to time
-  - A is twice as likely to occur in two-hour window than in one hour. 
+  - A is twice as likely to occur in two-hour window than in one hour.
+  
+- Each observation is recorder over the same fixed period of time.
+
+- Data Set is not overloaded with zero counts. 
 
 ## Methodology: The Poisson Regression
 
@@ -78,7 +82,25 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - Coefficients evalued for statisical significance using z-statistic and corresponding p-value
 
-  
+- We can use R glm function where we indicate the family to be "poisson" in order to obtain our fitted equation and coefficient estimates. 
+
+## Discussion and Critiques: Model Assumptions
+
+- We have good reason to question a few necessary assumptions of the Poisson Distribution in regards to our data set
+
+- Mean and Variance are not equal $E[Y] = 2.8$ and $V[Y] = 4.5$
+  - Over-dispersion, which could indicate that we should use a different model
+
+- We have a large number of observations for which the count is 0
+
+- Consider using a different model to fit to our data
+  - Zero-Inflated Poisson Regression
+    - accounts for large number of 0 counts in data set
+  - Zero-Inflated Negative Binomial Regression
+    - helps with both larger number of 0s and over-dispersion
+
+
+
 
 ## R Markdown
 
