@@ -15,9 +15,21 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Applying the Poisson Regression
 
-1. Helps to find outcome of   
+####  Main Project Questions
 
-2.  
+- What is the Poisson Regression and what are it's applications?
+
+- Using the Poisson Regression, can we find significant relationships within our data set.
+
+
+## Introduction Continued
+
+### Our Data Set and Research Question
+
+ - "Contact with Medical Doctors"
+ -- Cross-Sectional data collected in North Carolina between 1977-78
+ -- Examines 20186 observations of individuals
+ --- Randomly selected subset of 2000 observations for ease of computation
 
 
 
