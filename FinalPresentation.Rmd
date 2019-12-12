@@ -76,7 +76,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - Poisson Regression finds estimates for the linear equation relating the log of a response variable to predictors.
   - $log(\hat{\mu}) = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{p}X_{p}$
-  - $\hat{\mu} = e^{\beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{p}X_{p}} $
+  - $\hat{\mu} = e^{\beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{p}X_{p}}$
 -  Allows us to see how a marginal change in our predictor variable impacts the estimated count of our variable.  
 - Coefficients found using the Maximum Likelihood Estimate process
 
