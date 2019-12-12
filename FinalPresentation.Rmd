@@ -52,8 +52,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - A probability function which is especially useful for count data
     - $Y$ is a variable with discrete outcomes ($0,1,2,...$) where high counts for $Y$ are rare
-    - $$ f(Y) = \frac{\mu^{Y}*e^{-\mu}}{Y!} $$
-    - $$ E[Y] = \mu $$
+    - $f(Y) = \frac{\mu^{Y}*e^{-\mu}}{Y!}$
+    - $E[Y] = \mu$
+    - $P(Y = y) = \frac{\mu^{y}*e^{-\mu}}{y!}$
+    - $\mu$ also sometimes noted as $\lambda$
     
 ## Methodology: Necessary Conditions for the Poisson Distribution
 
@@ -66,7 +68,17 @@ knitr::opts_chunk$set(echo = FALSE)
 - Probabilities are porportional to time
   - A is twice as likely to occur in two-hour window than in one hour. 
 
+## Methodology: The Poisson Regression
 
+- Poisson Regression finds estimates for the linear equation relating the log of a response variable to predictors.
+  - $log(\hat{\mu}) = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{p}X_{p}$
+  - $\hat{\mu} = e^{\beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{p}X_{p}} $
+-  Allows us to see how a marginal change in our predictor variable impacts the estimated count of our variable.  
+- Coefficients found using the Maximum Likelihood Estimate process
+
+- Coefficients evalued for statisical significance using z-statistic and corresponding p-value
+
+  
 
 ## R Markdown
 
