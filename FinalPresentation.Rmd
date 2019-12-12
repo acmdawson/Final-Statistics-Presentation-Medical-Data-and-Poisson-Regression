@@ -100,7 +100,22 @@ knitr::opts_chunk$set(echo = FALSE)
     - helps with both larger number of 0s and over-dispersion
 
 
+## Discussion and Critiques: Inference
 
+- With our data being so significant (perhaps abnormally), we were unsure of our ability to use the coefficients with any confidence
+
+- With a high number of possible predictors, we could have ommitted some very significant variables from the regression, which could be vital in understanding what impacts utilization of healthcare.
+
+- Data set is from the 1970s
+  - Comprehensive, but outdated
+  - If using data to enact policy shifts or structural changes, our data analysis might not be "in touch" enough with the current climate of health care. 
+ 
+ - Data is collected from N.C. only, which limits the scope in which we can make inferences.
+  - Perhaps some cultural/societal impacts in N.C. region impacted our data
+  - US healthcare system unique, so inferences at most apply only to US.
+  
+ 
+ 
 
 ## R Markdown
 
