@@ -48,6 +48,23 @@ knitr::opts_chunk$set(echo = FALSE)
 - Use the Poisson Regression to model the data and see what relationships, if any, exist in between our variables.  
 
 
+## Methodology: The Poisson Distribution
+
+- A probability function which is especially useful for count data
+    - $Y$ is a variable with discrete outcomes ($0,1,2,...$) where high counts for $Y$ are rare
+    - $$ f(Y) = \frac{\mu^{Y}*e^{-\mu}}{Y!} $$
+    - $$ E[Y] = \mu $$
+    
+## Methodology: Necessary Conditions for the Poisson Distribution
+
+- The Mean and Variance of Y are the equal
+  - $E[Y] = V[Y] = \mu$
+  
+- Independence
+  - An event A occuring does not impact event B from occuring
+  
+- Probabilities are porportional to time
+  - A is twice as likely to occur in two-hour window than in one hour. 
 
 
 ## R Markdown
