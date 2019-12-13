@@ -84,6 +84,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - We can use R glm function where we indicate the family to be "poisson" in order to obtain our fitted equation and coefficient estimates. 
 
+## Methodology: The Poisson vs. Other Regressions
+
+- As mentioned, Poisson deals with discrete quantitative variables, as opposed to continuous quantitative variables (Linear Regression) or Yes/No outcomes (Logistical Regression)
+
+- Similar to the Logistical Regression in that the coefficients are interpreted in the context of the log
+
+- Poisson is particularly helpful when looking at specific count issues, such as traffic accidents at a particular intersection, prime staffing numbers during peak hours at a business, or number of soliders killed by a mule's kick
+
 ## Results and Conclusion: An Introduction to our Data
 
 - Observational Units: Individuals in North Carolina
