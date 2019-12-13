@@ -1,7 +1,7 @@
 ---
 title: "Poisson Regression and Applications"
 author: "Adam Dawson, Sarah Onstad-Hawes, and Asare Buahin"
-date: "12/11/2019"
+date: "12/13/2019"
 output: beamer_presentation
 ---
 
