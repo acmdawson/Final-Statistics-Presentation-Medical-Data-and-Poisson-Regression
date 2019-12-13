@@ -48,12 +48,12 @@ p.linc <- summary(regmod3)$coefficients[2,4]
 p.age <- summary(regmod4)$coefficients[2,4]
 p.sex <- summary(regmod5)$coefficients[2,4]
 rbind(p.physlim, p.disease, p.linc,p.age,p.sex)
-summar
 ```
 From our knowledge on Poisson Distribution, we can write out the regression model like so
 $$log(MDU) = -1.03+0.029NDisease + 0.435PhysLim + 0.184linc-0.245Male+0.004Age$$
 Which is equivalent to 
-$$MDU = e^{-1.02+1.44PhysLim + 0.09NDisease + 0.248LInc + 0.03Age - 0.311Male}$$
+$$MDU = e^{-1.03+0.029NDisease + 0.435PhysLim + 0.184linc-0.245Male+0.004Age}$$
+
 What we can see from this model:
 - Men visit the doctor's office less than women do.
 
