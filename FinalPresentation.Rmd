@@ -150,7 +150,7 @@ p + geom_histogram(mapping = aes(x = mdu), bins = 50 )
 
 
 
-
+ 
 ## Results and Conclusions: Another Application
 
 - In addition to regression, we can use the poisson distribution to find probabilities of specific count occurences or ranges of count occurences in the data.
