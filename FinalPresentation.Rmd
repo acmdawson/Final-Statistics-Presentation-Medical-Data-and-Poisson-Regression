@@ -123,7 +123,20 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - Working on real world data is tough and messy. Takes a lot more time and careful thought
   - No exact, clear path for analysis
-  -  "One step forward, two steps back"
+- "One step forward, two steps back"
+
+## References
+
+https://stats.idre.ucla.edu/r/dae/poisson-regression/
+
+https://stats.idre.ucla.edu/stata/output/poisson-regression/
+
+https://stats.idre.ucla.edu/r/dae/zip/
+
+https://www.sciencedirect.com/science/article/pii/S0167629602000085
+
+https://www.dataquest.io/blog/tutorial-poisson-regression-in-r/#:~:targetText=Poisson%20Regression%20models%20are%20best,where%20the%20outcomes%20are%20counts.&targetText=Poisson%20Regression%20helps%20us%20analyze,the%20count%20or%20a%20rate).
+
 
 ## R Markdown
 
