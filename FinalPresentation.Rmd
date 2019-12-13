@@ -84,6 +84,43 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - We can use R glm function where we indicate the family to be "poisson" in order to obtain our fitted equation and coefficient estimates. 
 
+## Results and Conclusions: An Introduction to our Data:
+
+```{r, message = FALSE, warning = FALSE}
+library(ggplot2)
+library(dplyr)
+library(tibble)
+library(here)
+library(Stat2Data)
+library(knitr)
+library(leaps)
+library(GGally)
+
+Doctor <- read.csv(here("", "DoctorContacts.csv"))
+Doctor <- as_tibble(Doctor)
+
+Doc_sample <- Doctor[sample(1:nrow(Doctor), 2000,
+   replace=FALSE),]
+
+Doctor_Summary <- Doc_sample %>%
+            	summarize(count = n(), st.dev = round(sd(mdu),2),
+                      	sample_mean = round(mean(mdu),2), med = round(median(mdu), 2),
+                        	min = min(mdu), max = max(mdu))
+kable(Doctor_Summary)
+```
+
+## Results and Conclusions: Our Data
+
+```{r, message =  FALSE, warning= FALSE, fig.height = 2, fig.width = 3, fig.cap= "Count of an Individual's Doctors Visits in a Year"}
+p <- ggplot(data = Doc_sample)
+
+p + geom_histogram(mapping = aes(x = mdu), bins = 50 )
+```
+
+
+- Histogram shows a distribution skewed to the right
+  - A high number of 0 counts in our data set
+
 ## Discussion and Critiques: Model Assumptions
 
 - We have good reason to question a few necessary assumptions of the Poisson Distribution in regards to our data set
@@ -128,13 +165,9 @@ knitr::opts_chunk$set(echo = FALSE)
 ## References
 
 https://stats.idre.ucla.edu/r/dae/poisson-regression/
-
 https://stats.idre.ucla.edu/stata/output/poisson-regression/
-
 https://stats.idre.ucla.edu/r/dae/zip/
-
 https://www.sciencedirect.com/science/article/pii/S0167629602000085
-
 https://www.dataquest.io/blog/tutorial-poisson-regression-in-r/#:~:targetText=Poisson%20Regression%20models%20are%20best,where%20the%20outcomes%20are%20counts.&targetText=Poisson%20Regression%20helps%20us%20analyze,the%20count%20or%20a%20rate).
 
 
