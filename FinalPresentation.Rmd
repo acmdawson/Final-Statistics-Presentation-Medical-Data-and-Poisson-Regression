@@ -149,7 +149,7 @@ p + geom_histogram(mapping = aes(x = mdu), bins = 50 )
   - A high number of 0 counts in our data set
 
 
- 
+  
  
 ## Results and Conclusions: Another Application
 
