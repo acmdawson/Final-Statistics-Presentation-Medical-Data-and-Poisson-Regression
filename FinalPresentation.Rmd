@@ -219,16 +219,15 @@ pvalstep5
 ```
 
 ## Results and Conclusions: Summary Output of model
-From our forward selection test, we found that the model considering disease, physical limitation, log of income and age as explanatory variables was the best model to explain the number of times a person visits the doctor in a year
-
 ```{r, message = FALSE, warning = FALSE}
 model <- glm( mdu ~ ndisease + physlim + linc + sex + age,  Doc_sample, family = poisson) 
 summary(model)
 ```
 ## Results and Conclusions: Final Model
-From our knowledge on Poisson Distribution, we can write out the regression model like so
-$$log(MDU) = -1.03+0.029NDisease + 0.435PhysLim + 0.184linc-0.245Male+0.004Age$$
-Which is equivalent to 
+- From our knowledge on Poisson Distribution, we can write out the regression model like so
+$log(MDU) = -1.03+0.029NDisease + 0.435PhysLim + 0.184linc-0.245Male+0.004Age$
+
+- Which is equivalent to 
 $MDU = e^{-1.03+0.029NDisease + 0.435PhysLim + 0.184linc-0.245Male+0.004Age}$
 
 ## Results and Conclusions: Another Application
