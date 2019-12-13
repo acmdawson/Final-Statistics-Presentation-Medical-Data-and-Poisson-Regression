@@ -1,0 +1,164 @@
+---
+title: "Poisson Regression and Applications"
+author: "Adam Dawson, Sarah Onstad-Hawes, and Asare Buahin"
+date: "12/11/2019"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+
+##  Introduction: Main Project Questions
+
+- What is the Poisson Regression and what are it's applications?
+
+- Using the Poisson Regression, can we find significant relationships within our data set.
+
+
+## Introduction: Our Data Set
+
+
+
+
+ - "Contact with Medical Doctors"
+ 
+    - Cross-Sectional data collected in North Carolina between 1977-78
+ 
+    - Examines 20186 observations of individuals
+ 
+      - Randomly selected subset of 2000 observations for ease of computation
+    
+    - Collected from RAND Health Insurance Experiment (RHIE), which is the longest and largest socially controlled experiment regarding medical care (Price, D. 2002)
+    
+    - Our Response Variable of interest is mdu, which captures the number of times an individual visited a medical health profession during the study
+    
+    - Data Set also contains 14 other variables of interest
+      
+
+## Introduction: Our Research Question
+
+- How is the number of doctor visits impacted by various factors in an individual's life?
+
+  - Specifically, we want see how one's age, sex, income, physical limitations, and present diseases influence their ability to seek out medical care.  
+  
+- Use the Poisson Regression to model the data and see what relationships, if any, exist in between our variables.  
+
+
+## Methodology: The Poisson Distribution
+
+- A probability function which is especially useful for count data
+    - $Y$ is a variable with discrete outcomes ($0,1,2,...$) where high counts for $Y$ are rare
+    - $f(Y) = \frac{\mu^{Y}*e^{-\mu}}{Y!}$
+    - $E[Y] = \mu$
+    - $P(Y = y) = \frac{\mu^{y}*e^{-\mu}}{y!}$
+    - $\mu$ also sometimes noted as $\lambda$
+    
+## Methodology: Necessary Conditions for the Poisson Distribution
+
+- The Mean and Variance of Y are the equal
+  - $E[Y] = V[Y] = \mu$
+  
+- Independence
+  - An event A occuring does not impact event B from occuring
+  
+- Probabilities are porportional to time
+  - A is twice as likely to occur in two-hour window than in one hour.
+  
+- Each observation is recorder over the same fixed period of time.
+
+- Data Set is not overloaded with zero counts. 
+
+## Methodology: The Poisson Regression
+
+- Poisson Regression finds estimates for the linear equation relating the log of a response variable to predictors.
+  - $log(\hat{\mu}) = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{p}X_{p}$
+  - $\hat{\mu} = e^{\beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{p}X_{p}}$
+-  Allows us to see how a marginal change in our predictor variable impacts the estimated count of our variable.  
+- Coefficients found using the Maximum Likelihood Estimate process
+
+- Coefficients evalued for statisical significance using z-statistic and corresponding p-value
+
+- We can use R glm function where we indicate the family to be "poisson" in order to obtain our fitted equation and coefficient estimates. 
+
+## Discussion and Critiques: Model Assumptions
+
+- We have good reason to question a few necessary assumptions of the Poisson Distribution in regards to our data set
+
+- Mean and Variance are not equal $E[Y] = 2.8$ and $V[Y] = 4.5$
+  - Over-dispersion, which could indicate that we should use a different model
+
+- We have a large number of observations for which the count is 0
+
+- Consider using a different model to fit to our data
+  - Zero-Inflated Poisson Regression
+    - accounts for large number of 0 counts in data set
+  - Zero-Inflated Negative Binomial Regression
+    - helps with both larger number of 0s and over-dispersion
+
+
+## Discussion and Critiques: Inference
+
+- With our data being so significant (perhaps abnormally), we were unsure of our ability to use the fitted equation with any confidence
+
+- With a high number of possible predictors, we could have ommitted some very significant variables from the regression, which could be vital in understanding what impacts utilization of healthcare.
+
+- Data set is from the 1970s
+  - Comprehensive, but outdated
+  - If using data to enact policy shifts or structural changes, our data analysis might not be "in touch" enough with the current climate of health care. 
+ 
+ - Data is collected from N.C. only, which limits the scope in which we can make inferences.
+  - Perhaps some cultural/societal impacts in N.C. region impacted our data
+  - US healthcare system unique, so inferences at most apply only to US.
+  
+ 
+## Conclusion
+
+- Poisson Regression is useful for analyzing count data, but it is crucial to check the data set and see that conditions are met prior to analysis and inference
+
+- Having a large sample size is helpful, but also must be aware of how that potentially impacts analysis.
+
+- Working on real world data is tough and messy. Takes a lot more time and careful thought
+  - No exact, clear path for analysis
+- "One step forward, two steps back"
+
+## References
+
+https://stats.idre.ucla.edu/r/dae/poisson-regression/
+
+https://stats.idre.ucla.edu/stata/output/poisson-regression/
+
+https://stats.idre.ucla.edu/r/dae/zip/
+
+https://www.sciencedirect.com/science/article/pii/S0167629602000085
+
+https://www.dataquest.io/blog/tutorial-poisson-regression-in-r/#:~:targetText=Poisson%20Regression%20models%20are%20best,where%20the%20outcomes%20are%20counts.&targetText=Poisson%20Regression%20helps%20us%20analyze,the%20count%20or%20a%20rate).
+
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
