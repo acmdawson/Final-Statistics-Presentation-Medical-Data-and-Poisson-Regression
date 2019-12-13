@@ -84,7 +84,21 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - We can use R glm function where we indicate the family to be "poisson" in order to obtain our fitted equation and coefficient estimates. 
 
-## Results and Conclusions: An Introduction to our Data:
+## Results and Conclusion: An Introduction to our Data
+
+- Observational Units: Individuals in North Carolina
+
+- Overall, we have chosen five predictor variables to estimate our response variable
+- Response Variable: 
+    - mdu measures the number of doctors visits one person attends in a year: Count
+- Predictor Variables used:
+  - Linc denotes a person's yearly log(income): Quantitative
+  - Age denotes a person's age at the time of the study: Quantitative
+  - Physlim denotes if a person has any sort of  physical limitation: Categorical, Binary
+  - ndiseases denotes the number of diagnosed diseases a person has at the time of the study:Quantitative
+  - Sex denotes the sex of the patient: Categorical, Binary (Male == 1, Female == 0)
+
+## Results and Conclusions: An Introduction to our Data continued
 
 ```{r, message = FALSE, warning = FALSE}
 library(ggplot2)
@@ -114,7 +128,7 @@ kable(Doctor_Summary)
 
   - Over-disperion present
 
-## Results and Conclusions: Our Data
+***
 
 ```{r, message =  FALSE, warning= FALSE, fig.height = 2, fig.width = 3, fig.cap= "Count of an Individual's Doctors Visits in a Year"}
 p <- ggplot(data = Doc_sample)
@@ -125,6 +139,8 @@ p + geom_histogram(mapping = aes(x = mdu), bins = 50 )
 
 - Histogram shows a distribution skewed to the right
   - A high number of 0 counts in our data set
+
+
 
 ## Discussion and Critiques: Model Assumptions
 
