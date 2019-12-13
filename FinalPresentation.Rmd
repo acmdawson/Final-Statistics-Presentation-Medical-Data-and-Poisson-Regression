@@ -148,9 +148,96 @@ p + geom_histogram(mapping = aes(x = mdu), bins = 50 )
 - Histogram shows a distribution skewed to the right
   - A high number of 0 counts in our data set
 
+## Results and Conclusions: Forward Selction:Step 1
+```{r, message = FALSE, warning = FALSE, echo=TRUE}
+regmod1<-glm(mdu~physlim, Doc_sample, family=poisson)
+regmod2<-glm(mdu~ndisease, Doc_sample, family=poisson)
+regmod3<-glm(mdu~linc, Doc_sample, family=poisson)
+regmod4<-glm(mdu~age, Doc_sample, family=poisson)
+regmod5<-glm(mdu~sex, Doc_sample, family=poisson)
+p.physlim <- summary(regmod1)$coefficients[2,4]
+p.disease <- summary(regmod2)$coefficients[2,4]
+p.linc <- summary(regmod3)$coefficients[2,4]
+p.age <- summary(regmod4)$coefficients[2,4]
+p.sex <- summary(regmod5)$coefficients[2,4]
+```
+## Results and Conclusions: Forward Selction:Step 1  
+```{r, message = FALSE, warning = FALSE}
+pvalstep1 = rbind(p.physlim, p.disease, p.linc,p.age,p.sex)
+pvalstep1
+```
+## Results and Conclusions: Forward Selction:Step 2
+```{r, message = FALSE, warning = FALSE, echo=TRUE}
+regmod11<-glm(mdu~ndisease+physlim, Doc_sample, 
+              family=poisson)
+regmod12<-glm(mdu~ndisease+linc, Doc_sample, 
+              family=poisson)
+regmod13<-glm(mdu~ndisease+age, Doc_sample, 
+              family=poisson)
+regmod14<-glm(mdu~ndisease+sex, Doc_sample, 
+              family=poisson)
+p.dp <- summary(regmod11)$coefficients[3,4]
+p.dli <- summary(regmod12)$coefficients[3,4]
+p.da <- summary(regmod13)$coefficients[3,4]
+p.ds <- summary(regmod14)$coefficients[3,4]
+```
+```{r, message = FALSE, warning = FALSE}
+pvalstep2=rbind(p.dp, p.dli, p.da,p.ds)
+pvalstep2
+```
+## Results and Conclusions: Forward Selction:Step 3
+```{r, message = FALSE, warning = FALSE, echo=TRUE}
+regmod21<-glm(mdu~ndisease+physlim+age, 
+              Doc_sample, family=poisson)
+regmod22<-glm(mdu~ndisease+physlim+sex, 
+              Doc_sample, family=poisson)
+regmod23<-glm(mdu~ndisease+physlim+linc, 
+              Doc_sample, family=poisson)
+p.dpa <- summary(regmod21)$coefficients[4,4]
+p.dps <- summary(regmod22)$coefficients[4,4]
+p.dpl <- summary(regmod23)$coefficients[4,4]
+```
+```{r, message = FALSE, warning = FALSE}
+pvalstep3=rbind(p.dpa, p.dps, p.dpl)
+pvalstep3
+```
+## Results and Conclusions: Forward Selction:Step 4
+```{r, message = FALSE, warning = FALSE, echo=TRUE}
+regmod31<-glm(mdu~ndisease+physlim+linc+sex, 
+              Doc_sample, family=poisson)
+regmod32<-glm(mdu~ndisease+physlim+linc+age, 
+              Doc_sample, family=poisson)
+p.dpls <- summary(regmod31)$coefficients[5,4]
+p.dpla <- summary(regmod32)$coefficients[5,4]
+```
+```{r, message = FALSE, warning = FALSE}
+pvalstep4=rbind(p.dpls, p.dpla)
+pvalstep4
+```
+## Results and Conclusions: Forward Selction:Step 5
+```{r, message = FALSE, warning = FALSE, echo=TRUE}
+regmod41<-glm(mdu~ndisease+physlim+linc+sex+age, 
+              Doc_sample, family=poisson)
+p.dlspa <- summary(regmod41)$coefficients[6,4]
+```
+```{r, message = FALSE, warning = FALSE}
+pvalstep5=rbind(p.dlspa)
+pvalstep5
+```
 
-  
- 
+## Results and Conclusions: Summary Output of model
+From our forward selection test, we found that the model considering disease, physical limitation, log of income and age as explanatory variables was the best model to explain the number of times a person visits the doctor in a year
+
+```{r, message = FALSE, warning = FALSE}
+model <- glm( mdu ~ ndisease + physlim + linc + sex + age,  Doc_sample, family = poisson) 
+summary(model)
+```
+## Results and Conclusions: Final Model
+From our knowledge on Poisson Distribution, we can write out the regression model like so
+$$log(MDU) = -1.03+0.029NDisease + 0.435PhysLim + 0.184linc-0.245Male+0.004Age$$
+Which is equivalent to 
+$MDU = e^{-1.03+0.029NDisease + 0.435PhysLim + 0.184linc-0.245Male+0.004Age}$
+
 ## Results and Conclusions: Another Application
 
 - In addition to regression, we can use the poisson distribution to find probabilities of specific count occurences or ranges of count occurences in the data.
