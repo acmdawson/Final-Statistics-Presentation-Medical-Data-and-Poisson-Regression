@@ -150,6 +150,19 @@ p + geom_histogram(mapping = aes(x = mdu), bins = 50 )
 
 
 
+
+## Results and Conclusions: Another Application
+
+- In addition to regression, we can use the poisson distribution to find probabilities of specific count occurences or ranges of count occurences in the data.
+
+```{r, echo = TRUE}
+Probof4ormore = ppois(4,lambda=2.86, lower.tail=FALSE)
+Probof4ormore
+```
+
+- This gives us the probability that a person will go to the doctor's office 4 or more times in a year. We can edit the lower.tail component of this code to give us the probablity that a person will go to the doctor's office 4 or less times in a year
+
+
 ## Discussion and Critiques: Model Assumptions
 
 - We have good reason to question a few necessary assumptions of the Poisson Distribution in regards to our data set
